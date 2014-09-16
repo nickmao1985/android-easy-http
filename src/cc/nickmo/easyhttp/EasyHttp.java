@@ -1,5 +1,5 @@
 /*
-    Android Asynchronous Http Client
+    Android Easy Http
     Copyright (c) 2014 Nick Mo <52714471@qq.com>
 
 
