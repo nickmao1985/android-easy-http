@@ -24,6 +24,7 @@ public class EasyHttpOptions {
      public static final int DEFAULT_MAX_RETRIES = 3;
      public static final int DEFAULT_RETRY_SLEEP_TIME_MILLIS = 1500;
      public static final boolean DEFAULT_SUPPORT_RETRY = true;
+     public static final String DEFALUT_URL = "http://127.0.0.1:9080/tjandroid/json.jsp";
      
      
      private int timeout = DEFAULT_SOCKET_TIMEOUT;
@@ -31,6 +32,7 @@ public class EasyHttpOptions {
      private int maxRetries = 3;
      private int retrySleepTimeMillis = DEFAULT_RETRY_SLEEP_TIME_MILLIS;
      private boolean supportRetry = DEFAULT_SUPPORT_RETRY;
+     private String url = DEFALUT_URL;
      
     /**
      * 获取超时时间
@@ -102,8 +104,22 @@ public class EasyHttpOptions {
 	public void setSupportRetry(boolean supportRetry) {
 		this.supportRetry = supportRetry;
 	}
+	/**
+	 * 获取URL
+	 * @return
+	 */
+	public String getUrl() {
+		return url;
+	}
+    /**
+     * 设置URL
+     * @param url
+     */
+	public void setUrl(String url) {
+		this.url = url;
+	}
      
-     
+    
      
      
 }
