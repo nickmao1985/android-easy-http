@@ -17,8 +17,8 @@
 */
 package cc.nickmo.easyhttp;
 
-//          		_oo0oo_
-//         		   o8888888o
+//                  _oo0oo_
+//                 o8888888o
 //         		   88" . "88
 //                 (| -_- |)
 //                 0\  =  /0
