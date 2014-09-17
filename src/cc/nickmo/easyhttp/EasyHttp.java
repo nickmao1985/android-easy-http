@@ -17,6 +17,31 @@
 */
 package cc.nickmo.easyhttp;
 
+import org.apache.http.conn.params.ConnManagerParams;
+import org.apache.http.conn.params.ConnPerRouteBean;
+import org.apache.http.conn.scheme.SchemeRegistry;
+import org.apache.http.params.BasicHttpParams;
+
 public class EasyHttp {
     
+	private final static String TAG = "EasyHttp";
+	
+	private static EasyHttpOptions httpConf;
+	
+	/**
+	 * 用于初始化或者更新Http配置
+	 * @param opts
+	 */
+	public static void initOrFlushOptions(EasyHttpOptions opts){
+		httpConf = opts;
+	}
+	
+	public EasyHttp(SchemeRegistry schemeRegistry){
+		if(httpConf == null) httpConf = new EasyHttpOptions();
+		BasicHttpParams httpParams = new BasicHttpParams();
+		
+		ConnManagerParams.setTimeout(httpParams, httpConf.getTimeout());
+		ConnManagerParams.setMaxConnectionsPerRoute(httpParams, new ConnPerRouteBean(httpConf.getMaxConnection()));
+		ConnManagerParams.setMaxTotalConnections(httpParams, 10);
+	}
 }
